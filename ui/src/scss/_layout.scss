@@ -368,3 +368,103 @@
         }
     }
 }
+
+@media screen and (max-width: 1050px) {
+    .app-layout {
+        flex-direction: column;
+
+        .app-sidebar {
+            flex-direction: row;
+            position: initial;
+            width: auto !important;
+            padding: 0 var(--smSpacing);
+            column-gap: var(--smSpacing);
+            border-right: 0;
+            border-bottom: 1px solid var(--baseAlt2Color);
+
+            .main-menu {
+                flex-direction: row;
+                column-gap: var(--smSpacing);
+                justify-content: center;
+                margin: var(--xsSpacing) 0;
+            }
+
+            .toggler-container .dropdown.dropdown-upside.dropdown-left {
+                right: 0;
+                left: auto;
+                top: 100%;
+                bottom: unset;
+            }
+        }
+
+        .page-sidebar {
+            // !important to override value set by sidebar resize
+            width: auto !important;
+            max-width: 100%;
+            border-right: 0;
+            border-bottom: 1px solid var(--baseAlt2Color);
+            padding: var(--smSpacing) var(--xsSpacing);
+            display: block;
+            text-wrap: nowrap;
+            overflow: auto;
+
+            hr {
+                display: none;
+            }
+
+            .search {
+                display: none;
+            }
+
+            .sidebar-content,
+            .sidebar-footer {
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+                vertical-align: middle;
+            }
+
+            .sidebar-list-item {
+                display: inline-flex;
+                width: auto;
+                margin: 0;
+
+                .pin-collection {
+                    display: none;
+                    margin: 0;
+                }
+
+                &.active .pin-collection {
+                    display: inline;
+                    opacity: 1;
+                }
+            }
+
+            .sidebar-header,
+            .sidebar-title {
+                display: none;
+            }
+        }
+
+        .page-content {
+            padding: var(--xsSpacing);
+        }
+
+        .app-body {
+            display: block;
+
+            .dragline {
+                display: none;
+            }
+        }
+
+        .app-sidebar~.app-body {
+            min-width: 0;
+        }
+    }
+
+    .field-types-dropdown .dropdown-item {
+        // !important to override value calculated in JS
+        width: 100% !important;
+    }
+}
